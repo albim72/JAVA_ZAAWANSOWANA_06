@@ -7,7 +7,7 @@ public class FunctionDef {
     };
 
     public static final Function<Integer,Integer> square = new Function<Integer, Integer>() {
-        @Overridea
+        @Override
         public Integer apply(Integer arg) {
             return arg*arg;
         }
@@ -15,7 +15,12 @@ public class FunctionDef {
 
     public static final  Function<Integer,Integer> compose(final Function<Integer,Integer> f1,
                                                            final Function<Integer,Integer> f2){
-        throw new RuntimeException("Do zaimplementowania");
+        return new Function<Integer, Integer>() {
+            @Override
+            public Integer apply(Integer arg) {
+                return f1.apply(f2.apply(arg));
+            }
+        };
     }
 
 }
