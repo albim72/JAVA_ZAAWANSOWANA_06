@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 public class Marker {
     @MyMarker
-    public static void MyMeth() {
+    public static void myMeth() {
         Marker ob = new Marker();
         try{
             Method m = ob.getClass().getMethod("myMeth");
